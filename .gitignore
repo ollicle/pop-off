@@ -1,0 +1,7 @@
+node_modules
+*.bbprojectd
+**/.DS_Store
+build/**/*
+!.gitkeep
+*.log
+npm-debug.log.*

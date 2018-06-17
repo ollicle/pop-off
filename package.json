@@ -1,0 +1,21 @@
+{
+	"name": "pop-off",
+	"version": "1.0.0",
+	"description": "Bookmarklet to remove fixed position elements with a tap",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prebuild": "uglifyjs --compress --mangle --output ./build/index.js -- ./src/index.js",
+		"build": "bookmark -M -f ./build/index.js > ./build/bookmark.js",
+		"postbuild": "npm run readme",
+		"prereadme": "cp ./src/template.md ./build/README.md",
+		"readme": "cd ./build/ && perl -pe 's/INCLUDEJS/`cat bookmark.js`/ge' -i README.md",
+		"postreadme": "mv -f ./build/README.md ./README.md"
+	},
+	"author": "Oliver Boermans <ollie@ollicle.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"inline-bookmark": "^1.1.0",
+		"uglify-es": "^3.3.9"
+	}
+}
