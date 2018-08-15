@@ -24,9 +24,9 @@ Drag this link to your browser bookmark bar: <a href="INCLUDEJS">pop-off</a>
 
 ### Distribution build
 
-Presuming dependencies are installed. The `dist` script builds and embeds the bookmarklet code `./build/bookmark.js` into this README
+Presuming dependencies are installed. The `build` script builds and embeds the bookmarklet code `./build/bookmark.js` into this README
 
-	npm run dist
+	npm run build
 
 ## Editing this document
 
